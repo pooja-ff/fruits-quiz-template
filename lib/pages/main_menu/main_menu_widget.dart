@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'main_menu_model.dart';
 export 'main_menu_model.dart';
@@ -59,19 +60,19 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsets.all(14.0),
+              padding: EdgeInsets.all(14.0),
               child: Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(24.0),
+                      padding: EdgeInsets.all(24.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -82,7 +83,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Fruit Quiz ',
                         textAlign: TextAlign.center,
@@ -93,7 +94,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 8.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -106,16 +107,15 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                                     .cast<LevelStruct>();
                                 FFAppState().currentLevel = 0;
                               });
-                              if (FFAppState().isSoundOn) {
-                                await actions.startMusic();
-                              } else {
-                                await actions.startMusic();
-                              }
+                              await actions.playOrPauseMusic(
+                                'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+                                false,
+                              );
 
                               context.pushNamed(
                                 'SelectLevel',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.topToBottom,
@@ -130,9 +130,9 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 56.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -153,14 +153,14 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 8.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
                                 'Settings',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.bottomToTop,
@@ -173,9 +173,9 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 56.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).accent1,
                               textStyle: FlutterFlowTheme.of(context)
@@ -193,7 +193,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
+                      ].divide(SizedBox(height: 12.0)),
                     ),
                   ],
                 ),

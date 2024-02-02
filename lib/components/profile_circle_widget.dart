@@ -2,6 +2,8 @@ import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'profile_circle_model.dart';
 export 'profile_circle_model.dart';
@@ -55,7 +57,7 @@ class _ProfileCircleWidgetState extends State<ProfileCircleWidget> {
         widget.ranks == LeaderboardRanks.First ? 140.0 : 110.0,
         110.0,
       ),
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Stack(
         children: [
           Container(
@@ -70,14 +72,14 @@ class _ProfileCircleWidgetState extends State<ProfileCircleWidget> {
             decoration: BoxDecoration(
               color: valueOrDefault<Color>(
                 widget.ranks == LeaderboardRanks.First
-                    ? const Color(0xFF4837DD)
+                    ? Color(0xFF4837DD)
                     : FlutterFlowTheme.of(context).primary,
-                const Color(0xFF6759E4),
+                Color(0xFF6759E4),
               ),
               shape: BoxShape.circle,
             ),
             child: Padding(
-              padding: const EdgeInsets.all(4.0),
+              padding: EdgeInsets.all(4.0),
               child: Container(
                 width: 100.0,
                 height: 100.0,
@@ -86,7 +88,7 @@ class _ProfileCircleWidgetState extends State<ProfileCircleWidget> {
                   shape: BoxShape.circle,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(2.0),
+                  padding: EdgeInsets.all(2.0),
                   child: Container(
                     width: 100.0,
                     height: 100.0,
@@ -118,20 +120,20 @@ class _ProfileCircleWidgetState extends State<ProfileCircleWidget> {
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Container(
               width: 40.0,
               height: 40.0,
               decoration: BoxDecoration(
                 color: valueOrDefault<Color>(
                   widget.ranks == LeaderboardRanks.First
-                      ? const Color(0xFF4837DD)
+                      ? Color(0xFF4837DD)
                       : FlutterFlowTheme.of(context).primary,
-                  const Color(0xFF6759E4),
+                  Color(0xFF6759E4),
                 ),
                 shape: BoxShape.circle,
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Text(
                 () {
                   if (widget.ranks == LeaderboardRanks.First) {

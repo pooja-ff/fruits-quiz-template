@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
+import '/backend/schema/enums/enums.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -38,99 +39,99 @@ class FFAppState extends ChangeNotifier {
 
   String _playerName = 'player1';
   String get playerName => _playerName;
-  set playerName(String value) {
-    _playerName = value;
-    prefs.setString('ff_playerName', value);
+  set playerName(String _value) {
+    _playerName = _value;
+    prefs.setString('ff_playerName', _value);
   }
 
   bool _isDarkMode = false;
   bool get isDarkMode => _isDarkMode;
-  set isDarkMode(bool value) {
-    _isDarkMode = value;
-    prefs.setBool('ff_isDarkMode', value);
+  set isDarkMode(bool _value) {
+    _isDarkMode = _value;
+    prefs.setBool('ff_isDarkMode', _value);
   }
 
   int _levelsCount = 5;
   int get levelsCount => _levelsCount;
-  set levelsCount(int value) {
-    _levelsCount = value;
+  set levelsCount(int _value) {
+    _levelsCount = _value;
   }
 
   int _currentLevel = 0;
   int get currentLevel => _currentLevel;
-  set currentLevel(int value) {
-    _currentLevel = value;
-    prefs.setInt('ff_currentLevel', value);
+  set currentLevel(int _value) {
+    _currentLevel = _value;
+    prefs.setInt('ff_currentLevel', _value);
   }
 
   List<PlayerStruct> _currentPlayers = [];
   List<PlayerStruct> get currentPlayers => _currentPlayers;
-  set currentPlayers(List<PlayerStruct> value) {
-    _currentPlayers = value;
+  set currentPlayers(List<PlayerStruct> _value) {
+    _currentPlayers = _value;
   }
 
-  void addToCurrentPlayers(PlayerStruct value) {
-    _currentPlayers.add(value);
+  void addToCurrentPlayers(PlayerStruct _value) {
+    _currentPlayers.add(_value);
   }
 
-  void removeFromCurrentPlayers(PlayerStruct value) {
-    _currentPlayers.remove(value);
+  void removeFromCurrentPlayers(PlayerStruct _value) {
+    _currentPlayers.remove(_value);
   }
 
-  void removeAtIndexFromCurrentPlayers(int index) {
-    _currentPlayers.removeAt(index);
+  void removeAtIndexFromCurrentPlayers(int _index) {
+    _currentPlayers.removeAt(_index);
   }
 
   void updateCurrentPlayersAtIndex(
-    int index,
+    int _index,
     PlayerStruct Function(PlayerStruct) updateFn,
   ) {
-    _currentPlayers[index] = updateFn(_currentPlayers[index]);
+    _currentPlayers[_index] = updateFn(_currentPlayers[_index]);
   }
 
-  void insertAtIndexInCurrentPlayers(int index, PlayerStruct value) {
-    _currentPlayers.insert(index, value);
+  void insertAtIndexInCurrentPlayers(int _index, PlayerStruct _value) {
+    _currentPlayers.insert(_index, _value);
   }
 
   List<LevelStruct> _levelsList = [];
   List<LevelStruct> get levelsList => _levelsList;
-  set levelsList(List<LevelStruct> value) {
-    _levelsList = value;
+  set levelsList(List<LevelStruct> _value) {
+    _levelsList = _value;
   }
 
-  void addToLevelsList(LevelStruct value) {
-    _levelsList.add(value);
+  void addToLevelsList(LevelStruct _value) {
+    _levelsList.add(_value);
   }
 
-  void removeFromLevelsList(LevelStruct value) {
-    _levelsList.remove(value);
+  void removeFromLevelsList(LevelStruct _value) {
+    _levelsList.remove(_value);
   }
 
-  void removeAtIndexFromLevelsList(int index) {
-    _levelsList.removeAt(index);
+  void removeAtIndexFromLevelsList(int _index) {
+    _levelsList.removeAt(_index);
   }
 
   void updateLevelsListAtIndex(
-    int index,
+    int _index,
     LevelStruct Function(LevelStruct) updateFn,
   ) {
-    _levelsList[index] = updateFn(_levelsList[index]);
+    _levelsList[_index] = updateFn(_levelsList[_index]);
   }
 
-  void insertAtIndexInLevelsList(int index, LevelStruct value) {
-    _levelsList.insert(index, value);
+  void insertAtIndexInLevelsList(int _index, LevelStruct _value) {
+    _levelsList.insert(_index, _value);
   }
 
   bool _isHapticAllowed = true;
   bool get isHapticAllowed => _isHapticAllowed;
-  set isHapticAllowed(bool value) {
-    _isHapticAllowed = value;
+  set isHapticAllowed(bool _value) {
+    _isHapticAllowed = _value;
   }
 
   bool _isSoundOn = true;
   bool get isSoundOn => _isSoundOn;
-  set isSoundOn(bool value) {
-    _isSoundOn = value;
+  set isSoundOn(bool _value) {
+    _isSoundOn = _value;
   }
 }
 

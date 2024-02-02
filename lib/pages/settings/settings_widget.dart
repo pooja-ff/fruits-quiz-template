@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 import 'settings_model.dart';
@@ -80,14 +81,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   fontWeight: FontWeight.w600,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsets.all(18.0),
+            padding: EdgeInsets.all(18.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -150,13 +151,13 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         ),
                         Expanded(
                           child: Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: Switch.adaptive(
                               value: _model.musicSwitchValue ??= true,
                               onChanged: (newValue) async {
                                 setState(
-                                    () => _model.musicSwitchValue = newValue);
-                                if (newValue) {
+                                    () => _model.musicSwitchValue = newValue!);
+                                if (newValue!) {
                                   _model.soundPlayer ??= AudioPlayer();
                                   if (_model.soundPlayer!.playing) {
                                     await _model.soundPlayer!.stop();
@@ -201,12 +202,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         ),
                         Expanded(
                           child: Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: Switch.adaptive(
                               value: _model.darkModeSwitchValue ??= false,
                               onChanged: (newValue) async {
                                 setState(() =>
-                                    _model.darkModeSwitchValue = newValue);
+                                    _model.darkModeSwitchValue = newValue!);
                               },
                               activeColor: FlutterFlowTheme.of(context).primary,
                               activeTrackColor:
@@ -241,13 +242,13 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         ),
                         Expanded(
                           child: Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: Switch.adaptive(
                               value: _model.vibrationSwitchValue ??= false,
                               onChanged: (newValue) async {
                                 setState(() =>
-                                    _model.vibrationSwitchValue = newValue);
-                                if (newValue) {
+                                    _model.vibrationSwitchValue = newValue!);
+                                if (newValue!) {
                                   setState(() {
                                     FFAppState().isHapticAllowed = true;
                                   });
@@ -279,16 +280,16 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Figtree',
                           color: FlutterFlowTheme.of(context).primaryText,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

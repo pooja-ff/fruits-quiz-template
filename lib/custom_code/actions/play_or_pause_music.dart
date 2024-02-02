@@ -12,16 +12,21 @@ import 'package:flutter/material.dart';
 import '/custom_code/actions/init_audio_player.dart';
 import 'package:just_audio/just_audio.dart';
 
-Future startMusic() async {
-  String musicFileId = "1vkMyIGVGFtoIzpLK4BqtxjoOZ_NVVjme";
-
+Future playOrPauseMusic(String mp3Url, bool isPause) async {
   var _audioPlayer = AudioPlayerSingleton().audioPlayer!;
 
   if (_audioPlayer.playing) {
     await _audioPlayer.stop();
   }
-  _audioPlayer.setVolume(1);
-  _audioPlayer
-      .setAsset('assets/audios/Veaceslav_Draganov_-_Creeping_up_on_Tiptoes.mp3')
-      .then((_) => _audioPlayer.play());
+
+  if (!_audioPlayer.playing && isPause == false) {
+    await _audioPlayer.setAudioSource(
+      AudioSource.uri(
+        Uri.parse(mp3Url),
+      ),
+      initialIndex: 0,
+      initialPosition: Duration.zero,
+    );
+    await _audioPlayer.play();
+  }
 }

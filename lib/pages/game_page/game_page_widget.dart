@@ -4,8 +4,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'game_page_model.dart';
@@ -40,8 +42,8 @@ class _GamePageWidgetState extends State<GamePageWidget>
           curve: Curves.bounceOut,
           delay: 0.ms,
           duration: 860.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.05, 1.1),
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.05, 1.1),
         ),
       ],
     ),
@@ -92,9 +94,9 @@ class _GamePageWidgetState extends State<GamePageWidget>
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.all(24.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,11 +105,11 @@ class _GamePageWidgetState extends State<GamePageWidget>
                   wrapWithModel(
                     model: _model.rankPointsTableModel,
                     updateCallback: () => setState(() {}),
-                    child: const RankPointsTableWidget(),
+                    child: RankPointsTableWidget(),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 48.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 48.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -125,7 +127,7 @@ class _GamePageWidgetState extends State<GamePageWidget>
                                   ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 24.0),
                           child: LinearPercentIndicator(
                             percent: 0.5,
@@ -136,7 +138,7 @@ class _GamePageWidgetState extends State<GamePageWidget>
                             progressColor: FlutterFlowTheme.of(context).primary,
                             backgroundColor:
                                 FlutterFlowTheme.of(context).accent1,
-                            barRadius: const Radius.circular(8.0),
+                            barRadius: Radius.circular(8.0),
                             padding: EdgeInsets.zero,
                           ),
                         ),
@@ -144,7 +146,7 @@ class _GamePageWidgetState extends State<GamePageWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Text(
                       'Question 1/20',
                       style: FlutterFlowTheme.of(context).bodyMedium,
@@ -152,7 +154,7 @@ class _GamePageWidgetState extends State<GamePageWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                     child: Text(
                       'This is a long text. But in this page, you should choose ${widget.correctOption}',
                       style: FlutterFlowTheme.of(context).displaySmall,
@@ -170,7 +172,7 @@ class _GamePageWidgetState extends State<GamePageWidget>
                           final optionButtonsItem =
                               optionButtons[optionButtonsIndex];
                           return Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 8.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -187,7 +189,7 @@ class _GamePageWidgetState extends State<GamePageWidget>
                                   context.pushNamed(
                                     'ConfettiWinnerPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 1000),
@@ -199,9 +201,9 @@ class _GamePageWidgetState extends State<GamePageWidget>
                               text: optionButtonsItem,
                               options: FFButtonOptions(
                                 height: 60.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
@@ -214,7 +216,7 @@ class _GamePageWidgetState extends State<GamePageWidget>
                                       fontWeight: FontWeight.bold,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

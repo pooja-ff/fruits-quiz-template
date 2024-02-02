@@ -1,11 +1,20 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/schema/structs/index.dart';
+import '/backend/schema/enums/enums.dart';
 
 import '/index.dart';
+import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -30,27 +39,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => const MainMenuWidget(),
+      errorBuilder: (context, state) => MainMenuWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const MainMenuWidget(),
+          builder: (context, _) => MainMenuWidget(),
         ),
         FFRoute(
           name: 'MainMenu',
           path: '/mainMenu',
-          builder: (context, params) => const MainMenuWidget(),
+          builder: (context, params) => MainMenuWidget(),
         ),
         FFRoute(
           name: 'Settings',
           path: '/settings',
-          builder: (context, params) => const SettingsWidget(),
+          builder: (context, params) => SettingsWidget(),
         ),
         FFRoute(
           name: 'SelectLevel',
           path: '/selectLevel',
-          builder: (context, params) => const SelectLevelWidget(),
+          builder: (context, params) => SelectLevelWidget(),
         ),
         FFRoute(
           name: 'GamePage',
@@ -63,12 +72,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ConfettiWinnerPage',
           path: '/confettiWinnerPage',
-          builder: (context, params) => const ConfettiWinnerPageWidget(),
+          builder: (context, params) => ConfettiWinnerPageWidget(),
         ),
         FFRoute(
           name: 'LeaderBoard',
           path: '/leaderBoard',
-          builder: (context, params) => const LeaderBoardWidget(),
+          builder: (context, params) => LeaderBoardWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -231,7 +240,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

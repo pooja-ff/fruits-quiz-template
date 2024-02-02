@@ -1,3 +1,4 @@
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -5,6 +6,7 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'confetti_winner_page_model.dart';
 export 'confetti_winner_page_model.dart';
@@ -61,13 +63,13 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
           top: true,
           child: Container(
             height: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Stack(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: SizedBox(
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: Container(
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.8,
                     child: custom_widgets.ConfettiBgWidget(
@@ -81,14 +83,14 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                 ),
                 Container(
                   height: 370.0,
-                  decoration: const BoxDecoration(),
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  decoration: BoxDecoration(),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           child: Container(
                             width: double.infinity,
@@ -99,12 +101,12 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -117,7 +119,7 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: Text(
                                             'Level Complete!',
@@ -130,7 +132,7 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 24.0, 0.0, 24.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -147,7 +149,7 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                                       .titleLarge,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 0.0, 0.0),
                                               child: ClipRRect(
                                                 borderRadius:
@@ -172,7 +174,7 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                                       .titleLarge,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 0.0, 0.0),
                                               child: ClipRRect(
                                                 borderRadius:
@@ -211,7 +213,7 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                       context.pushNamed(
                                         'SelectLevel',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.bottomToTop,
@@ -223,10 +225,10 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -237,7 +239,7 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                             color: Colors.white,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -245,7 +247,7 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () {
@@ -255,10 +257,10 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                                       options: FFButtonOptions(
                                         width: double.infinity,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .accent4,
@@ -287,9 +289,9 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(0.0),
@@ -298,7 +300,7 @@ class _ConfettiWinnerPageWidgetState extends State<ConfettiWinnerPageWidget> {
                               width: 200.0,
                               height: 100.0,
                               fit: BoxFit.scaleDown,
-                              alignment: const Alignment(0.0, -1.0),
+                              alignment: Alignment(0.0, -1.0),
                             ),
                           ),
                         ),

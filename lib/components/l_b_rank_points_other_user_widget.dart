@@ -2,6 +2,8 @@ import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'l_b_rank_points_other_user_model.dart';
 export 'l_b_rank_points_other_user_model.dart';
@@ -53,7 +55,7 @@ class _LBRankPointsOtherUserWidgetState
       height: 60.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 1.0,
             color: Color(0xFF4837DD),
@@ -70,7 +72,7 @@ class _LBRankPointsOtherUserWidgetState
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -84,7 +86,7 @@ class _LBRankPointsOtherUserWidgetState
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                   child: Text(
                     valueOrDefault<String>(
                       widget.player?.profileName,
@@ -105,12 +107,12 @@ class _LBRankPointsOtherUserWidgetState
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -137,7 +139,7 @@ class _LBRankPointsOtherUserWidgetState
                     ],
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 100.0,
                   child: VerticalDivider(
                     thickness: 1.0,
@@ -162,7 +164,7 @@ class _LBRankPointsOtherUserWidgetState
                     ),
                     Text(
                       valueOrDefault<String>(
-                        widget.player?.highScore.toString(),
+                        widget.player?.highScore?.toString(),
                         '100',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(

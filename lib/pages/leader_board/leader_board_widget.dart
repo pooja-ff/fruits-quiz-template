@@ -5,10 +5,12 @@ import '/components/l_b_rank_points_other_user_widget.dart';
 import '/components/profile_circle_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'leader_board_model.dart';
 export 'leader_board_model.dart';
@@ -81,7 +83,7 @@ class _LeaderBoardWidgetState extends State<LeaderBoardWidget> {
                   fontSize: 20.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -91,7 +93,7 @@ class _LeaderBoardWidgetState extends State<LeaderBoardWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -99,21 +101,21 @@ class _LeaderBoardWidgetState extends State<LeaderBoardWidget> {
                     wrapWithModel(
                       model: _model.profileCircleModel1,
                       updateCallback: () => setState(() {}),
-                      child: const ProfileCircleWidget(
+                      child: ProfileCircleWidget(
                         ranks: LeaderboardRanks.Second,
                       ),
                     ),
                     wrapWithModel(
                       model: _model.profileCircleModel2,
                       updateCallback: () => setState(() {}),
-                      child: const ProfileCircleWidget(
+                      child: ProfileCircleWidget(
                         ranks: LeaderboardRanks.First,
                       ),
                     ),
                     wrapWithModel(
                       model: _model.profileCircleModel3,
                       updateCallback: () => setState(() {}),
-                      child: const ProfileCircleWidget(
+                      child: ProfileCircleWidget(
                         ranks: LeaderboardRanks.Third,
                       ),
                     ),
@@ -122,12 +124,12 @@ class _LeaderBoardWidgetState extends State<LeaderBoardWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 36.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 36.0),
                   child: Container(
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Builder(
                         builder: (context) {
                           final players = FFAppState().currentPlayers.toList();
@@ -136,11 +138,11 @@ class _LeaderBoardWidgetState extends State<LeaderBoardWidget> {
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: players.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 4.0),
+                            separatorBuilder: (_, __) => SizedBox(height: 4.0),
                             itemBuilder: (context, playersIndex) {
                               final playersItem = players[playersIndex];
                               return Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 6.0, 24.0, 0.0),
                                 child: Builder(
                                   builder: (context) {
