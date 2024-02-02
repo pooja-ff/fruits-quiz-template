@@ -2,6 +2,7 @@ import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -107,9 +108,13 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                                     .cast<LevelStruct>();
                                 FFAppState().currentLevel = 0;
                               });
-                              await actions.playOrPauseMusic(
-                                'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-                                false,
+                              unawaited(
+                                () async {
+                                  await actions.playOrPauseMusic(
+                                    'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+                                    false,
+                                  );
+                                }(),
                               );
 
                               context.pushNamed(

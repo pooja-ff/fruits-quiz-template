@@ -2,10 +2,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 import 'settings_model.dart';
 export 'settings_model.dart';
@@ -158,15 +158,15 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 setState(
                                     () => _model.musicSwitchValue = newValue!);
                                 if (newValue!) {
-                                  _model.soundPlayer ??= AudioPlayer();
-                                  if (_model.soundPlayer!.playing) {
-                                    await _model.soundPlayer!.stop();
-                                  }
-                                  _model.soundPlayer!.setVolume(1.0);
-                                  _model.soundPlayer!
-                                      .setAsset(
-                                          'assets/audios/Veaceslav_Draganov_-_Creeping_up_on_Tiptoes.mp3')
-                                      .then((_) => _model.soundPlayer!.play());
+                                  await actions.playOrPauseMusic(
+                                    FFAppState().musicFile,
+                                    false,
+                                  );
+                                } else {
+                                  await actions.playOrPauseMusic(
+                                    FFAppState().musicFile,
+                                    false,
+                                  );
                                 }
                               },
                               activeColor: FlutterFlowTheme.of(context).primary,

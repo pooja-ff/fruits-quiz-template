@@ -133,6 +133,13 @@ class FFAppState extends ChangeNotifier {
   set isSoundOn(bool _value) {
     _isSoundOn = _value;
   }
+
+  String _musicFile =
+      'https://drive.google.com/uc?export=download&id=1vkMyIGVGFtoIzpLK4BqtxjoOZ_NVVjme';
+  String get musicFile => _musicFile;
+  set musicFile(String _value) {
+    _musicFile = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

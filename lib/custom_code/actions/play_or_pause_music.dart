@@ -28,5 +28,6 @@ Future playOrPauseMusic(String mp3Url, bool isPause) async {
       initialPosition: Duration.zero,
     );
     await _audioPlayer.play();
+    _audioPlayer.setLoopMode(LoopMode.all);
   }
 }

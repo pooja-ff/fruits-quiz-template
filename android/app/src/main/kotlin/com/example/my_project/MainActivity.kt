@@ -1,4 +1,4 @@
-package io.flutterflow.gametemplate
+package io.flutterflow.quizgametemplate
 
 import io.flutter.embedding.android.FlutterActivity
 

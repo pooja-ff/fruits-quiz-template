@@ -1,4 +1,4 @@
-# GameTemplate
+# QuizGameTemplate
 
 A new Flutter project.
 
