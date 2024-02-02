@@ -135,10 +135,16 @@ class FFAppState extends ChangeNotifier {
   }
 
   String _musicFile =
-      'https://drive.google.com/uc?export=download&id=1vkMyIGVGFtoIzpLK4BqtxjoOZ_NVVjme';
+      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3';
   String get musicFile => _musicFile;
   set musicFile(String _value) {
     _musicFile = _value;
+  }
+
+  double _currentMusicVolume = 0.5;
+  double get currentMusicVolume => _currentMusicVolume;
+  set currentMusicVolume(double _value) {
+    _currentMusicVolume = _value;
   }
 }
 

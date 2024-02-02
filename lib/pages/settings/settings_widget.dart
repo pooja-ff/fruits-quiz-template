@@ -116,17 +116,41 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 ),
                           ),
                         ),
-                        Slider(
-                          activeColor: FlutterFlowTheme.of(context).primary,
-                          inactiveColor: FlutterFlowTheme.of(context).alternate,
-                          min: 0.0,
-                          max: 10.0,
-                          value: _model.soundSliderValue ??= 5.0,
-                          onChanged: (newValue) {
-                            newValue =
-                                double.parse(newValue.toStringAsFixed(2));
-                            setState(() => _model.soundSliderValue = newValue);
-                          },
+                        SliderTheme(
+                          data: SliderThemeData(
+                            showValueIndicator: ShowValueIndicator.always,
+                          ),
+                          child: Slider(
+                            activeColor: FlutterFlowTheme.of(context).primary,
+                            inactiveColor: FlutterFlowTheme.of(context).primary,
+                            min: 0.0,
+                            max: 1.0,
+                            value: _model.soundSliderValue ??=
+                                valueOrDefault<double>(
+                              FFAppState().currentMusicVolume,
+                              0.5,
+                            ),
+                            label: _model.soundSliderValue.toString(),
+                            onChanged: (newValue) {
+                              newValue =
+                                  double.parse(newValue.toStringAsFixed(1));
+                              setState(
+                                  () => _model.soundSliderValue = newValue);
+                            },
+                            onChangeEnd: (newValue) async {
+                              newValue =
+                                  double.parse(newValue.toStringAsFixed(1));
+                              setState(
+                                  () => _model.soundSliderValue = newValue);
+                              await actions.adjustMusicVolume(
+                                _model.soundSliderValue!,
+                              );
+                              setState(() {
+                                FFAppState().currentMusicVolume =
+                                    _model.soundSliderValue!;
+                              });
+                            },
+                          ),
                         ),
                       ],
                     ),
@@ -158,14 +182,16 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 setState(
                                     () => _model.musicSwitchValue = newValue!);
                                 if (newValue!) {
-                                  await actions.playOrPauseMusic(
-                                    FFAppState().musicFile,
-                                    false,
-                                  );
+                                  setState(() {
+                                    FFAppState().isSoundOn = true;
+                                  });
                                 } else {
+                                  setState(() {
+                                    FFAppState().isSoundOn = false;
+                                  });
                                   await actions.playOrPauseMusic(
                                     FFAppState().musicFile,
-                                    false,
+                                    true,
                                   );
                                 }
                               },

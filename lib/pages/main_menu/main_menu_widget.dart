@@ -108,14 +108,16 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                                     .cast<LevelStruct>();
                                 FFAppState().currentLevel = 0;
                               });
-                              unawaited(
-                                () async {
-                                  await actions.playOrPauseMusic(
-                                    'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-                                    false,
-                                  );
-                                }(),
-                              );
+                              if (FFAppState().isSoundOn) {
+                                unawaited(
+                                  () async {
+                                    await actions.playOrPauseMusic(
+                                      FFAppState().musicFile,
+                                      false,
+                                    );
+                                  }(),
+                                );
+                              }
 
                               context.pushNamed(
                                 'SelectLevel',
